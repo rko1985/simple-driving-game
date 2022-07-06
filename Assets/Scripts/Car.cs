@@ -12,6 +12,15 @@ public class Car : MonoBehaviour
 
     private int steerValue;
 
+    private void Start()
+    {
+        if(PlayerPrefs.GetInt(Store.NewCarUnlockedKey, 0 ) == 1)
+        {
+            GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.blue);
+        }
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
